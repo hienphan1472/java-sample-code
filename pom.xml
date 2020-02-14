@@ -44,4 +44,32 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>frenzy-test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>**/Frenzy**.java</include>
+                            </includes>
+                            <parallel>classes</parallel>
+                            <threadCount>2</threadCount>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>

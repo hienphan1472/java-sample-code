@@ -1,6 +1,5 @@
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.junit.Assert;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -9,14 +8,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class SampleTest {
+public class LaunchTwoAppsTest {
     private IOSDriver driver;
     private AppiumServer appiumServer;
 
     public DesiredCapabilities getDefaultDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "YourDeviceName");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Hulk-phone");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13.3");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
         capabilities.setCapability(MobileCapabilityType.UDID, "d2eaf15d6eb6009c2576dd63add4ae4b495347dd");

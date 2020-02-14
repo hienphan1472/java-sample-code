@@ -22,7 +22,8 @@ public class AppiumServer {
         builder.withIPAddress("127.0.0.1");
         builder.usingPort(4723);
         builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
-        builder.withArgument(GeneralServerFlag.LOG_LEVEL, LogLevel.INFO.toString());
+        builder.withArgument(GeneralServerFlag.LOG_LEVEL, LogLevel.DEBUG.toString());
+        builder.withEnvironment(new ProcessBuilder().environment());
         builder.withLogFile(createLoggerFile());
         service = AppiumDriverLocalService.buildService(builder);
     }
