@@ -12,7 +12,6 @@ import java.util.List;
 public class FrenzyAppBaseTest {
     protected AndroidDriver driver;
     static String HUB_URL = "http://127.0.0.1:4444/wd/hub";
-    private AppiumServer appiumServer;
 
     private static By agreeButton = By.id("com.shopify.frenzy.app:id/onboarding_button");
     private static By setupButton = By.id("com.shopify.frenzy.app:id/setup_button");
@@ -23,8 +22,7 @@ public class FrenzyAppBaseTest {
 
     @Before
     public void setUp() {
-        appiumServer = AppiumServer.getInstance();
-        appiumServer.startServer();
+        System.out.println("Do some setup stuff");
     }
 
     @After
@@ -32,7 +30,6 @@ public class FrenzyAppBaseTest {
         if (driver != null) {
             driver.quit();
         }
-        appiumServer.stopServer();
     }
 
     public void scrollAndClick(String visibleText) {

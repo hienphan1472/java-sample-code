@@ -30,5 +30,5 @@ java -jar /path/to/selenium-server-standalone.jar -role hub
 
 ## To register appium node to selenium grid hub
 
-appium -p 4723 --nodeconfig ./src/test/resources/nodeconfig-android.json
-appium -p 4733 --nodeconfig ./src/test/resources/nodeconfig-android.json
+appium -a 127.0.0.1 -p 4723 --nodeconfig ./src/test/resources/nodeconfig-android.json
+appium -a 127.0.0.1 -p 4733 --nodeconfig ./src/test/resources/nodeconfig-android.json
