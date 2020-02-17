@@ -19,6 +19,16 @@ public class FrenzyAppBaseTest {
     private static By flashSaleEnterText = By.id("com.shopify.frenzy.app:id/feed_flashsale_enter_text");
     private static By sizeButton = By.id("com.shopify.frenzy.app:id/variant_text");
     private static By payWithGoogleButton = By.id("com.shopify.frenzy.app:id/pay_with_google_button");
+    private static By creditCardText = By.id("com.google.android.gms:id/credit_card_number");
+    private static By expireDateText = By.id("com.google.android.gms:id/exp_date");
+    private static By cvcText = By.id("com.google.android.gms:id/cvc");
+    private static By billingAddressText = By.id("com.google.android.gms:id/summary_text_view_text");
+    private static By streetAddressText = By.id("com.google.android.gms:id/address_field_address_line_1");
+    private static By aptSuiteText = By.id("com.google.android.gms:id/address_field_address_line_2");
+    private static By cityText = By.id("com.google.android.gms:id/address_field_locality");
+    private static By provinceDropdown = By.id("com.google.android.gms:id/description");
+    private static By postalCodeText = By.id("com.google.android.gms:id/address_field_postal_code");
+    private static By recipientAddressLabel = By.id("com.google.android.gms:id/recipient_name");
 
     @Before
     public void setUp() {
@@ -60,9 +70,17 @@ public class FrenzyAppBaseTest {
 
         driver.findElement(payWithGoogleButton).click();
 
-        sleep(10);
-
-        // System.out.println("=======================");
-        // System.out.println(driver.getPageSource());
+        wait.until(ExpectedConditions.presenceOfElementLocated(creditCardText)).sendKeys("4242424242424242");
+        wait.until(ExpectedConditions.presenceOfElementLocated(expireDateText)).sendKeys("12/21");
+        wait.until(ExpectedConditions.presenceOfElementLocated(cvcText)).sendKeys("123");
+        wait.until(ExpectedConditions.presenceOfElementLocated(billingAddressText)).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(streetAddressText)).sendKeys("Cam Bac");
+        wait.until(ExpectedConditions.presenceOfElementLocated(cityText)).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(cityText)).sendKeys("Danang");
+        wait.until(ExpectedConditions.presenceOfElementLocated(postalCodeText)).sendKeys("50000");
+        wait.until(ExpectedConditions.presenceOfElementLocated(recipientAddressLabel)).click();
+        System.out.println(driver.getContextHandles());
+        System.out.println("=======================");
+        System.out.println(driver.getPageSource());
     }
 }

@@ -15,7 +15,10 @@ public class FrenzyAppAndroidParallelTest1 extends FrenzyAppBaseTest {
             capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.shopify.frenzy.app");
             capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.shopify.frenzy.feed.ui.FeedActivity");
             capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-            capabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
+            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
+            capabilities.setCapability(AndroidMobileCapabilityType.UNICODE_KEYBOARD, true);
+            capabilities.setCapability(AndroidMobileCapabilityType.RESET_KEYBOARD, true);
+            capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
             capabilities.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT, port);
             driver = new AndroidDriver<>(new URL(HUB_URL), capabilities);
         } catch (MalformedURLException e) {
